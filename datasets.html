@@ -74,19 +74,20 @@
     <!-- inject:templates:html -->
     <script id="card-template" type="text/x-handlebars-template"><div class="panel panel-default">
         <div class="panel-heading department-title-heading">
-            <h1 class="department-title">{{Politicar}}, {{JLS}} – {{"Type of Data"}} - {{"Naslov obecanja"}}</h1>
+            <h1 class="department-title">{{Politicar}}, {{JLS}} – {{"Type of Data"}}</h1>
         </div>
         <div class="panel-body">
+            <h2>{{"Naslov obecanja"}}</h2>
             <p><b>Sažetak: </b><br>{{"Sazetak obecanja"}}</p>
             <div class="row">
               <div class="col-sm-4">
-                  <p><b>Izvor: </b><a href={{'Link na izvorno obecanje'}}>klikni za više informacija</a></p>
+                  <p><b>Izvor: </b><a href={{'Link na izvorno obecanje'}}>{{"Lokacija obecanja"}}</a></p>
               </div>
               <div class="col-sm-4">
-                  <p><b>Lokacija: </b>{{"Lokacija obecanja"}}</p>
+                  <p><b>Status provedbe: </b>{{"Kratki status provedbe"}}</p>
               </div>
               <div class="col-sm-4">
-                  <p><b> Ocjena: </b>{{Ocjena}} <i class="fa fa-circle datapole {{free}}"></i></p>
+                  <p><b>Ocjena: </b>{{Ocjena}}</p>
               </div>
           </div>
             <p><b>Analiza: </b><br>{{"Analiza obecanja"}}</p>
