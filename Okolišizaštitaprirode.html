@@ -13,7 +13,6 @@
     <!-- inject:css -->
     <link rel="stylesheet" href="/PredizborniProgrami/common/css/lib.min.css">
     <link rel="stylesheet" href="/PredizborniProgrami/common/css/common.css">
-    <link rel="stylesheet" href="/PredizborniProgrami/datasets/css/app.min.css">
     <!-- endinject -->
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -55,17 +54,19 @@
     <div class="container-fluid">
       <div class="row">
         <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-10 col-md-offset-1 main">
-          <div class="alert alert-info" role="alert">
-            <!--<button type="button" class="close" data-dismiss="alert">×</button>-->
-            <p><b>Nedostaje li nešto? Javite nam <a href="https://forms.gle/6PgqL5CeRCYCbx5K9">za dodavanje ili ažuriranje postojećih obećanja</a>.</b></p>
-          </div>
+          <h1>Program / Okoliš i zaštita prirode
+            <h1>
+              <h3>Opis ove kategorije:</h3>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vitae dui vel magna consectetur aliquam. Duis rhoncus, erat id pretium semper, enim ligula pulvinar eros, in consequat felis enim a diam. Cras sed est egestas, tincidunt mauris sit amet, auctor velit. Vivamus luctus augue tortor, vel auctor sapien consectetur vitae. Cras et interdum arcu. Suspendisse interdum odio nec elementum pellentesque. Mauris et ligula nec justo porttitor euismod vel vel tortor.</p>
         </div>
+      </div>
+      <div class="row">
         <div id="cards" class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-10 col-md-offset-1 main">
         </div>
       </div>
     </div>
     <script id="department-template" type="text/x-handlebars-template">
-      <option onChange="filterByDepartment('{{Politicar}}')">{{Politicar}}</option>
+      <li><a href="#" onClick="filterByDepartment('{{Politicar}}')">{{Politicar}}</a></li>
     </script>
     <script id="datatype-template" type="text/x-handlebars-template">
       <li><a href="#" onClick="filterByDatatype('{{[Type of Data]}}' )">{{[Type of Data]}}</a></li>
@@ -114,10 +115,13 @@
       ga('create', 'UA-xxxxxxxx', 'auto');
       ga('send', 'pageview');
     </script>
+    <script>
+      pageType = "Okoliš i zaštita prirode";
+    </script>
     <!-- inject:js -->
     <script src="/PredizborniProgrami/common/js/lib.min.js"></script>
     <script src="/PredizborniProgrami/common/js/common.min.js"></script>
-    <script src="/PredizborniProgrami/datasets/js/app.min.js"></script>
+    <script src="/PredizborniProgrami/datatype/js/app.min.js"></script>
     <!-- endinject -->
   </body>
 
