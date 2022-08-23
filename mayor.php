@@ -24,7 +24,7 @@
 
 
 <body>
-<p> <a href="./index.html">Glavna</a> | <b>Gradonacelnik</b> | <a href="./usporedba.html">Usporedba</a> </p>
+<p> <a href="./index.php">Glavna</a> | <b>Gradonacelnik</b> | <a href="./comparison.php">Usporedba</a> </p>
 
 <br/>
 <br/>

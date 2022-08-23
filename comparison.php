@@ -24,7 +24,7 @@
 
 
 <body>
-<p> <a href="./index.html">Glavna</a> | Gradonacelnik | <b>Usporedba</b> </p>
+<p> <a href="./index.php">Glavna</a> | Gradonacelnik | <b>Usporedba</b> </p>
 
 <br/>
 <br/>
@@ -50,7 +50,7 @@
         <th>Gradska uprava i upravljanje</th>
     </tr>
     <tr>
-        <td><a href="./gradonacelnik.html">Darko Darkovic</a></td>
+        <td><a href="./mayor.php">Darko Darkovic</a></td>
         <td>Darkograd</td>
         <td>3 god.</td>
         <td>1 od 14</td>

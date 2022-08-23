@@ -24,7 +24,7 @@
 
 
 <body>
-<p> <b>Glavna</b> | Gradonacelnik | <a href="./usporedba.html">Usporedba</a></p>
+<p> <b>Glavna</b> | Gradonacelnik | <a href="./comparison.php">Usporedba</a></p>
 
 <br/>
 <br/>
@@ -46,19 +46,19 @@
         <th>Ispunjenih obecanja</th>
     </tr>
     <tr>
-        <td><a href="./gradonacelnik.html">Darko Darkovic</a></td>
+        <td><a href="./mayor.php">Darko Darkovic</a></td>
         <td>Darkograd</td>
         <td>3 god.</td>
         <td>5 / 30</td>
     </tr>
     <tr>
-        <td><a href="./gradonacelnik.html">Marko Markovic</a></td>
+        <td><a href="./mayor.php">Marko Markovic</a></td>
         <td>Markograd</td>
         <td>3 god.</td>
         <td>10 / 30</td>
     </tr>
     <tr>
-        <td><a href="./gradonacelnik.html">Ivan Ivankovic</a></td>
+        <td><a href="./mayor.php">Ivan Ivankovic</a></td>
         <td>Ivangrad</td>
         <td>3 god.</td>
         <td>15 / 30</td>
