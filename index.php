@@ -24,6 +24,44 @@
 
 
 <body>
+
+<?php
+
+class MayorOverview {
+  public $mayor_name;
+  public $city_name;
+  public $num_of_promises;
+  public $num_of_fulfilled_promises;
+}
+
+function createMayorOverview($name, $city, $num_of_fulfilled_promises, $num_of_promises)
+{
+    $obj = new MayorOverview();
+    $obj->mayor_name = $name;
+    $obj->city_name = $city;
+    $obj->num_of_promises = $num_of_promises;
+    $obj->num_of_fulfilled_promises = $num_of_fulfilled_promises;
+
+    return $obj;
+}
+
+
+
+$listOfMayors = array();
+
+array_push($listOfMayors, createMayorOverview("Mayor_1", "City_1", 5, 28));
+array_push($listOfMayors, createMayorOverview("Mayor_2", "City_2", 10, 29));
+array_push($listOfMayors, createMayorOverview("Mayor_3", "City_3", 15, 30));
+
+echo "<pre>";
+print_r($listOfMayors);
+//var_dump($listOfMayors);
+echo " </pre>";
+
+echo "<p>Pokus</p>";
+
+?>
+
 <p> <b>Glavna</b> | Gradonacelnik | <a href="./comparison.php">Usporedba</a></p>
 
 <br/>
@@ -63,6 +101,16 @@
         <td>3 god.</td>
         <td>15 / 30</td>
     </tr>
+    <?php
+    foreach($listOfMayors as $mayor) {
+        echo "<tr>";
+        echo "<td><a href=\"./mayor.php\">$mayor->mayor_name</a></td>";
+        echo "<td>$mayor->city_name</td>";
+        echo "<td></td>";
+        echo "<td>$mayor->num_of_fulfilled_promises / $mayor->num_of_promises</td>";
+        echo "</tr>";
+    }
+    ?>
 </table>
 
 
