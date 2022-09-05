@@ -54,20 +54,25 @@
         <td>na 7. stranici PDF progama</td>
         <td>Provedeno u predvidenom vremenskom okviru</td>
     </tr>
-    <tr>
-        <td>Test</td>
-        <td>Test</td>
-        <td>Test</td>
-        <td>Test</td>
-        <td>Test</td>
-    </tr>
-    <tr>
-        <td>Test</td>
-        <td>Test</td>
-        <td>Test</td>
-        <td>Test</td>
-        <td>Test</td>
-    </tr>
+    <?php
+
+    $listOfPromises = array();
+
+    array_push($listOfPromises, "dummy");
+    array_push($listOfPromises, "dummy");
+    array_push($listOfPromises, "dummy");
+
+
+    foreach($listOfPromises as $promise) {
+        echo "<tr>";
+        echo "<td>Test</td>";
+        echo "<td>Test</td>";
+        echo "<td>Test</td>";
+        echo "<td>Test</td>";
+        echo "<td>Test</td>";
+        echo "</tr>";
+    }
+    ?>
 </table>
 
 <br/>
@@ -89,20 +94,17 @@
         <td>na 7. stranici PDF progama</td>
         <td>Djelomicno provedeno u predvidenom vremenskom okviru</td>
     </tr>
-    <tr>
-        <td>Test</td>
-        <td>Test</td>
-        <td>Test</td>
-        <td>Test</td>
-        <td>Test</td>
-    </tr>
-    <tr>
-        <td>Test</td>
-        <td>Test</td>
-        <td>Test</td>
-        <td>Test</td>
-        <td>Test</td>
-    </tr>
+    <?php
+    foreach($listOfPromises as $promise) {
+        echo "<tr>";
+        echo "<td>Test</td>";
+        echo "<td>Test</td>";
+        echo "<td>Test</td>";
+        echo "<td>Test</td>";
+        echo "<td>Test</td>";
+        echo "</tr>";
+    }
+    ?>
 </table>
 
 <br/>
@@ -124,20 +126,17 @@
         <td>na 9. stranici PDF progama</td>
         <td>Djelomicno provedeno u predvidenom vremenskom okviru</td>
     </tr>
-    <tr>
-        <td>Test</td>
-        <td>Test</td>
-        <td>Test</td>
-        <td>Test</td>
-        <td>Test</td>
-    </tr>
-    <tr>
-        <td>Test</td>
-        <td>Test</td>
-        <td>Test</td>
-        <td>Test</td>
-        <td>Test</td>
-    </tr>
+    <?php
+    foreach($listOfPromises as $promise) {
+        echo "<tr>";
+        echo "<td>Test</td>";
+        echo "<td>Test</td>";
+        echo "<td>Test</td>";
+        echo "<td>Test</td>";
+        echo "<td>Test</td>";
+        echo "</tr>";
+    }
+    ?>
 </table>
 
 

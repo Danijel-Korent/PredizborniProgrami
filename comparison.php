@@ -33,7 +33,6 @@
     <tr>
         <th>Gradonacelnik</th>
         <th>Grad</th>
-        <th>Preostalo mandata</th>
         <th>Ekonomija i gospodarstvo</th>
         <th>Okoliš i zaštita prirode</th>
         <th>Urbanizam i stanovanje</th>
@@ -52,7 +51,6 @@
     <tr>
         <td><a href="./mayor.php">Darko Darkovic</a></td>
         <td>Darkograd</td>
-        <td>3 god.</td>
         <td>1 od 14</td>
         <td>2 od 14</td>
         <td>3 od 14</td>
@@ -71,7 +69,6 @@
     <tr>
         <td>Marko Markovic</td>
         <td>Markograd</td>
-        <td>3 god.</td>
         <td>1 od 14</td>
         <td>2 od 14</td>
         <td>3 od 14</td>
@@ -90,7 +87,6 @@
     <tr>
         <td>Ivan Ivankovic</td>
         <td>Ivangrad</td>
-        <td>3 god.</td>
         <td>1 od 14</td>
         <td>2 od 14</td>
         <td>3 od 14</td>
@@ -106,6 +102,36 @@
         <td>13 od 14</td>
         <td>14 od 14</td>
     </tr>
+    <?php
+
+    $listOfPromises = array();
+
+    array_push($listOfPromises, "dummy");
+    array_push($listOfPromises, "dummy");
+    array_push($listOfPromises, "dummy");
+
+
+    foreach($listOfPromises as $promise) {
+        echo "<tr>";
+        echo "<td>Pokusni Gradonacelnik</td>";
+        echo "<td>Pokusni Grad</td>";
+        echo "<td>Test</td>";
+        echo "<td>Test</td>";
+        echo "<td>Test</td>";
+        echo "<td>Test</td>";
+        echo "<td>Test</td>";
+        echo "<td>Test</td>";
+        echo "<td>Test</td>";
+        echo "<td>Test</td>";
+        echo "<td>Test</td>";
+        echo "<td>Test</td>";
+        echo "<td>Test</td>";
+        echo "<td>Test</td>";
+        echo "<td>Test</td>";
+        echo "<td>Test</td>";
+        echo "</tr>";
+    }
+    ?>
 </table>
 
 

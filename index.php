@@ -80,25 +80,21 @@ echo "<p>Pokus</p>";
     <tr>
         <th>Gradonacelnik</th>
         <th>Grad</th>
-        <th>Preostalo mandata</th>
         <th>Ispunjenih obecanja</th>
     </tr>
     <tr>
         <td><a href="./mayor.php">Darko Darkovic</a></td>
         <td>Darkograd</td>
-        <td>3 god.</td>
         <td>5 / 30</td>
     </tr>
     <tr>
         <td><a href="./mayor.php">Marko Markovic</a></td>
         <td>Markograd</td>
-        <td>3 god.</td>
         <td>10 / 30</td>
     </tr>
     <tr>
         <td><a href="./mayor.php">Ivan Ivankovic</a></td>
         <td>Ivangrad</td>
-        <td>3 god.</td>
         <td>15 / 30</td>
     </tr>
     <?php
@@ -106,7 +102,6 @@ echo "<p>Pokus</p>";
         echo "<tr>";
         echo "<td><a href=\"./mayor.php\">$mayor->mayor_name</a></td>";
         echo "<td>$mayor->city_name</td>";
-        echo "<td></td>";
         echo "<td>$mayor->num_of_fulfilled_promises / $mayor->num_of_promises</td>";
         echo "</tr>";
     }
