@@ -23,8 +23,6 @@
 </head>
 
 
-<body>
-
 <?php
 
 class MayorOverview {
@@ -54,14 +52,13 @@ array_push($listOfMayors, createMayorOverview("Mayor_2", "City_2", 10, 29));
 array_push($listOfMayors, createMayorOverview("Mayor_3", "City_3", 15, 30));
 
 echo "<pre>";
-print_r($listOfMayors);
+//print_r($listOfMayors);
 //var_dump($listOfMayors);
 echo " </pre>";
-
-echo "<p>Pokus</p>";
-
 ?>
 
+
+<body>
 <p> <b>Glavna</b> | Gradonacelnik | <a href="./comparison.php">Usporedba</a></p>
 
 <br/>

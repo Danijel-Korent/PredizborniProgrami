@@ -22,6 +22,44 @@
     </style>
 </head>
 
+<?php
+
+class Promise {
+  public $name;
+  public $category;
+  public $description;
+  public $url;
+  public $location;
+  public $result;
+}
+
+function createPromise($name, $category, $description, $url, $location, $result)
+{
+    $obj = new Promise();
+    $obj->name = $name;
+    $obj->category = $category;
+    $obj->description = $description;
+    $obj->url = $url;
+    $obj->location = $location;
+    $obj->result = $result;
+
+    return $obj;
+}
+
+$listOfPromises = array();
+
+# TODO: Convert category string values into enum values
+array_push($listOfPromises, createPromise("Promise_1", "Gradska uprava i upravljanje", "Description_1", "URL_1", "location_1", "result_1"));
+array_push($listOfPromises, createPromise("Promise_2", "Ekonomija i gospodarstvo", "Description_1", "URL_2", "location_1", "result_1"));
+array_push($listOfPromises, createPromise("Promise_3", "Urbanizam i stanovanje", "Description_1", "URL_3", "location_1", "result_1"));
+
+
+echo "<pre>";
+//print_r($listOfPromises);
+//var_dump($listOfPromises);
+echo " </pre>";
+?>
+
 
 <body>
 <p> <a href="./index.php">Glavna</a> | <b>Gradonacelnik</b> | <a href="./comparison.php">Usporedba</a> </p>
@@ -55,22 +93,16 @@
         <td>Provedeno u predvidenom vremenskom okviru</td>
     </tr>
     <?php
-
-    $listOfPromises = array();
-
-    array_push($listOfPromises, "dummy");
-    array_push($listOfPromises, "dummy");
-    array_push($listOfPromises, "dummy");
-
-
     foreach($listOfPromises as $promise) {
-        echo "<tr>";
-        echo "<td>Test</td>";
-        echo "<td>Test</td>";
-        echo "<td>Test</td>";
-        echo "<td>Test</td>";
-        echo "<td>Test</td>";
-        echo "</tr>";
+        if ($promise->category == "Gradska uprava i upravljanje") {
+            echo "<tr>";
+            echo "<td>$promise->name</td>";
+            echo "<td>$promise->description</td>";
+            echo "<td><a href=\"$promise->url\" target=\"_blank\">$promise->url</td>";
+            echo "<td>$promise->location</td>";
+            echo "<td>$promise->result</td>";
+            echo "</tr>";
+        }
     }
     ?>
 </table>
@@ -96,13 +128,15 @@
     </tr>
     <?php
     foreach($listOfPromises as $promise) {
-        echo "<tr>";
-        echo "<td>Test</td>";
-        echo "<td>Test</td>";
-        echo "<td>Test</td>";
-        echo "<td>Test</td>";
-        echo "<td>Test</td>";
-        echo "</tr>";
+        if ($promise->category == "Ekonomija i gospodarstvo") {
+            echo "<tr>";
+            echo "<td>$promise->name</td>";
+            echo "<td>$promise->description</td>";
+            echo "<td><a href=\"$promise->url\" target=\"_blank\">$promise->url</td>";
+            echo "<td>$promise->location</td>";
+            echo "<td>$promise->result</td>";
+            echo "</tr>";
+        }
     }
     ?>
 </table>
@@ -128,13 +162,15 @@
     </tr>
     <?php
     foreach($listOfPromises as $promise) {
-        echo "<tr>";
-        echo "<td>Test</td>";
-        echo "<td>Test</td>";
-        echo "<td>Test</td>";
-        echo "<td>Test</td>";
-        echo "<td>Test</td>";
-        echo "</tr>";
+        if ($promise->category == "Urbanizam i stanovanje") {
+            echo "<tr>";
+            echo "<td>$promise->name</td>";
+            echo "<td>$promise->description</td>";
+            echo "<td><a href=\"$promise->url\" target=\"_blank\">$promise->url</td>";
+            echo "<td>$promise->location</td>";
+            echo "<td>$promise->result</td>";
+            echo "</tr>";
+        }
     }
     ?>
 </table>
