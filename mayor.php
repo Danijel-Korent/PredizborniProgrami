@@ -22,37 +22,11 @@
     </style>
 </head>
 
+
 <?php
+require_once "data_provider.php";
 
-class Promise {
-  public $name;
-  public $category;
-  public $description;
-  public $url;
-  public $location;
-  public $result;
-}
-
-function createPromise($name, $category, $description, $url, $location, $result)
-{
-    $obj = new Promise();
-    $obj->name = $name;
-    $obj->category = $category;
-    $obj->description = $description;
-    $obj->url = $url;
-    $obj->location = $location;
-    $obj->result = $result;
-
-    return $obj;
-}
-
-$listOfPromises = array();
-
-# TODO: Convert category string values into enum values
-array_push($listOfPromises, createPromise("Promise_1", "Gradska uprava i upravljanje", "Description_1", "URL_1", "location_1", "result_1"));
-array_push($listOfPromises, createPromise("Promise_2", "Ekonomija i gospodarstvo", "Description_1", "URL_2", "location_1", "result_1"));
-array_push($listOfPromises, createPromise("Promise_3", "Urbanizam i stanovanje", "Description_1", "URL_3", "location_1", "result_1"));
-
+$listOfPromises = get_signle_mayor_data("Test");
 
 echo "<pre>";
 //print_r($listOfPromises);

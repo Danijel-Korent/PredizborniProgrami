@@ -22,51 +22,14 @@
     </style>
 </head>
 
+
 <?php
+require_once "data_provider.php";
 
-class MayorPromisesOverview {
-  public $mayor_name;
-  public $city_name;
 
-  # Za pocetak samo hardcodirati sve kategorije, kasnije refaktorirati da sve dinamicki generira
-  public $num_of_promises;
-  public $num_of_fulfilled_promises;
-}
-
-function createMayorOverview($name, $city, $promises)
-{
-    $obj = new MayorPromisesOverview();
-    $obj->mayor_name = $name;
-    $obj->city_name = $city;
-    $obj->promises = $promises;
-
-    return $obj;
-}
-
-$promises = array(
-  "Ekonomija i gospodarstvo"  => [1, 2],
-  "Okoliš i zaštita prirode"  => [3, 4],
-  "Urbanizam i stanovanje"    => [5, 6],
-  "Promet"              => [7, 8],
-  "Obrazovanje"         => [9, 9],
-  "Kultura"             => [1, 2],
-  "Zdravstvo"           => [3, 4],
-  "Socijalna politika"  => [5, 6],
-  "Sigurnost"           => [7, 8],
-  "Mladi"               => [9, 9],
-  "Civilno društvo"     => [1, 2],
-  "Sport"               => [3, 4],
-  "Mjesna samouprava"   => [5, 6],
-  "Gradska uprava i upravljanje"  => [7, 8],
-);
-
-$listOfMayors = array();
-
-array_push($listOfMayors, createMayorOverview("Gradonacelnik_1", "Grad_1", $promises));
-array_push($listOfMayors, createMayorOverview("Gradonacelnik_2", "Grad_2", $promises));
-array_push($listOfMayors, createMayorOverview("Gradonacelnik_3", "Grad_3", $promises));
-
+$listOfMayors = get_all_mayors_comparison();
 ?>
+
 
 <body>
 <p> <a href="./index.php">Glavna</a> | Gradonacelnik | <b>Usporedba</b> </p>
