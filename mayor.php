@@ -26,7 +26,7 @@
 <?php
 require_once "data_provider.php";
 
-$listOfPromises = get_signle_mayor_data("Test");
+$listOfPromises = get_single_mayor_data("Test");
 
 echo "<pre>";
 //print_r($listOfPromises);

@@ -3,6 +3,11 @@
 // TODO: Merge data returned in these functions into a single source of hardcoded data
 // TODO: Replace hardcoded data with csv/xml source
 
+
+
+
+////////////////// Getters //////////////////////////////////////////////////
+
 function get_all_mayors_overview() {
 
     class MayorOverview {
@@ -80,7 +85,7 @@ function get_all_mayors_comparison() {
 
 
 // TODO: mayor_name is currently ignored and data hardcoded
-function get_signle_mayor_data($mayor_name) {
+function get_single_mayor_data($mayor_name) {
 
     class Promise {
         public $name;
