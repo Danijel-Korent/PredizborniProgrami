@@ -29,7 +29,7 @@ require_once "data_provider.php";
 $listOfMayors = get_all_mayors_overview();
 
 echo "<pre>";
-//print_r($listOfMayors);
+print_r($listOfMayors);
 //var_dump($listOfMayors);
 echo " </pre>";
 ?>
@@ -55,21 +55,6 @@ echo " </pre>";
         <th>Gradonacelnik</th>
         <th>Grad</th>
         <th>Ispunjenih obecanja</th>
-    </tr>
-    <tr>
-        <td><a href="./mayor.php">Darko Darkovic</a></td>
-        <td>Darkograd</td>
-        <td>5 / 30</td>
-    </tr>
-    <tr>
-        <td><a href="./mayor.php">Marko Markovic</a></td>
-        <td>Markograd</td>
-        <td>10 / 30</td>
-    </tr>
-    <tr>
-        <td><a href="./mayor.php">Ivan Ivankovic</a></td>
-        <td>Ivangrad</td>
-        <td>15 / 30</td>
     </tr>
     <?php
     foreach($listOfMayors as $mayor) {
