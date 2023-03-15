@@ -178,8 +178,12 @@ function get_all_mayors_comparison() {
 function get_single_mayor_data($mayor_name, $mayor_city) {
 
     // TODO: Remove this harcoded data and implement argument parsing from the URL
-    $mayor_name = "Jane Smith";
-    $mayor_city = "Seattle";
+    // $mayor_name = "Jane Smith";
+    // $mayor_city = "Seattle";
+
+    if (($mayor_name == NULL) || ($mayor_city == NULL)) {
+        return array();
+    }
 
     // Get hardcoded list of promises
     $all_promises = get_test_data();

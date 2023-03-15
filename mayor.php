@@ -26,7 +26,10 @@
 <?php
 require_once "data_provider.php";
 
-$listOfPromises = get_single_mayor_data("Test", "Test");
+$name = $_GET['name'];
+$city = $_GET['city'];
+
+$listOfPromises = get_single_mayor_data($name, $city);
 
 echo "<pre>";
 //print_r($listOfPromises);
@@ -36,7 +39,7 @@ echo " </pre>";
 
 
 <body>
-<p> <a href="./index.php">Glavna</a> | <b>Gradonacelnik</b> | <a href="./comparison.php">Usporedba</a> </p>
+<p> <a href="../index.php">Glavna</a> | <b>Gradonacelnik</b> | <a href="../comparison.php">Usporedba</a> </p>
 
 <br/>
 <br/>

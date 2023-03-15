@@ -58,7 +58,7 @@ echo " </pre>";
     <?php
     foreach($listOfMayors as $mayor) {
         echo "<tr>";
-        echo "<td><a href=\"./mayor.php\">$mayor->mayor_name</a></td>";
+        echo "<td><a href=\"./mayor.php/?name=$mayor->mayor_name&city=$mayor->city_name\">$mayor->mayor_name</a></td>";
         echo "<td>$mayor->city_name</td>";
         echo "<td>$mayor->num_of_fulfilled_promises / $mayor->num_of_promises</td>";
         echo "</tr>";
