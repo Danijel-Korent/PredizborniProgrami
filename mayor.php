@@ -44,8 +44,10 @@ echo " </pre>";
 <br/>
 <br/>
 
-<p>Gradonacelnik: <b>Darko Darkovic</b></p>
-<p>Grad: <b>Darkograd</b></p>
+<?php
+echo "<p>Gradonacelnik: <b>$name</b></p>";
+echo "<p>Grad: <b>$city</b></p>";
+?>
 
 <br/>
 <p>Prijavite promjene na slijedecem linku: LINK</p>
