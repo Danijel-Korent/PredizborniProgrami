@@ -175,30 +175,32 @@ function get_all_mayors_comparison() {
 
 
 // TODO: mayor_name is currently ignored and data hardcoded
-function get_single_mayor_data($mayor_name) {
+function get_single_mayor_data($mayor_name, $mayor_city) {
 
-    class PromiseOld {
-        public $name;
-        public $category;
-        public $description;
-        public $url;
-        public $location;
-        public $result;
-    }
+    // TODO: Remove this harcoded data and implement argument parsing from the URL
+    $mayor_name = "Jane Smith";
+    $mayor_city = "Seattle";
 
-    function createPromise($name, $category, $description, $url, $location, $result) {
-        $obj = new PromiseOld();
-        $obj->name = $name;
-        $obj->category = $category;
-        $obj->description = $description;
-        $obj->url = $url;
-        $obj->location = $location;
-        $obj->result = $result;
+    // Get hardcoded list of promises
+    $all_promises = get_test_data();
 
-        return $obj;
-    }
-
+    // The list of promises to be returned
+    // TODO: Rename this to better name
     $listOfPromises = array();
+
+    // Find all distict mayors and count their fullfilled promises
+    {
+        foreach($all_promises as $promise) {
+
+            $iter_mayor_name = $promise->mayor_name;
+            $iter_mayor_city = $promise->city;
+
+            if (($iter_mayor_name == $mayor_name) && ($iter_mayor_city == $mayor_city)) {
+                // TODO: Instead of creating a new promise, align structers so that the "$promise" can be directly passed to the array
+                array_push($listOfPromises, $promise);
+            }
+        }
+    }
 
     # TODO: Convert category string values into enum values
     array_push($listOfPromises, createPromise("Promise_1", "Gradska uprava i upravljanje", "Description_1", "URL_1", "location_1", "result_1"));

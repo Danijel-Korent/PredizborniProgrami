@@ -26,7 +26,7 @@
 <?php
 require_once "data_provider.php";
 
-$listOfPromises = get_single_mayor_data("Test");
+$listOfPromises = get_single_mayor_data("Test", "Test");
 
 echo "<pre>";
 //print_r($listOfPromises);
@@ -72,9 +72,9 @@ echo " </pre>";
             echo "<tr>";
             echo "<td>$promise->name</td>";
             echo "<td>$promise->description</td>";
-            echo "<td><a href=\"$promise->url\" target=\"_blank\">$promise->url</td>";
+            echo "<td><a href=\"$promise->source_URL\" target=\"_blank\">$promise->source_URL</td>";
             echo "<td>$promise->location</td>";
-            echo "<td>$promise->result</td>";
+            echo "<td>$promise->status</td>";
             echo "</tr>";
         }
     }
@@ -106,9 +106,9 @@ echo " </pre>";
             echo "<tr>";
             echo "<td>$promise->name</td>";
             echo "<td>$promise->description</td>";
-            echo "<td><a href=\"$promise->url\" target=\"_blank\">$promise->url</td>";
+            echo "<td><a href=\"$promise->source_URL\" target=\"_blank\">$promise->source_URL</td>";
             echo "<td>$promise->location</td>";
-            echo "<td>$promise->result</td>";
+            echo "<td>$promise->status</td>";
             echo "</tr>";
         }
     }
@@ -140,9 +140,9 @@ echo " </pre>";
             echo "<tr>";
             echo "<td>$promise->name</td>";
             echo "<td>$promise->description</td>";
-            echo "<td><a href=\"$promise->url\" target=\"_blank\">$promise->url</td>";
+            echo "<td><a href=\"$promise->source_URL\" target=\"_blank\">$promise->source_URL</td>";
             echo "<td>$promise->location</td>";
-            echo "<td>$promise->result</td>";
+            echo "<td>$promise->status</td>";
             echo "</tr>";
         }
     }
