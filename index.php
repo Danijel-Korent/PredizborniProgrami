@@ -29,8 +29,7 @@ require_once "data_provider.php";
 $listOfMayors = get_all_mayors_overview();
 
 echo "<pre>";
-print_r($listOfMayors);
-//var_dump($listOfMayors);
+//print_r($listOfMayors);
 echo " </pre>";
 ?>
 

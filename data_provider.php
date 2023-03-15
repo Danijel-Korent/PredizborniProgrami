@@ -44,7 +44,7 @@ function create_promise($date, $category, $mayor_name, $city, $status, $name, $d
 function get_test_data() {
     $promise1 = create_promise("4. 8. 2021.",    "Environment",      "Jane Smith",   "Seattle",      "DONE_DELAYED",                 "Reduce carbon emissions by 50%", "Launch a city-wide initiative to reduce carbon emissions",                                           "http://example.com/promise456", "Seattle",         "The initiative is currently being planned and will be launched soon", "The city expects to achieve its goal within the next 5 years");
     $promise2 = create_promise("5. 8. 2021.",    "Healthcare",       "Jane Smith",   "Los Angeles",  "DONE_ONTIME",                  "Build a new hospital", "Launch a project to build a new hospital in Los Angeles",                                                      "http://example.com/promise789", "Los Angeles",     "The hospital construction is underway", "The hospital is expected to be completed within the next 3 years");
-    $promise3 = create_promise("2. 7. 2022.",    "Education",        "Jane Smith",   "Seattle",      "INPROGRESS_PARTIAL_DELAYED",   "Increase funding for public schools by 20%", "Propose a new budget allocation for public schools in San Francisco",                    "http://example.com/promise012", "San Francisco",   "The budget proposal is being reviewed by the city council", "The increased funding is expected to improve the quality of education in San Francisco schools");
+    $promise3 = create_promise("2. 7. 2022.",    "Gradska uprava i upravljanje",        "Jane Smith",   "Seattle",      "INPROGRESS_PARTIAL_DELAYED",   "Increase funding for public schools by 20%", "Propose a new budget allocation for public schools in San Francisco",                    "http://example.com/promise012", "San Francisco",   "The budget proposal is being reviewed by the city council", "The increased funding is expected to improve the quality of education in San Francisco schools");
     $promise4 = create_promise("27. 1. 2022.",   "Crime",            "Jack Brown",   "Chicago",      "INPROGRESS_PARTIAL_ONTIME",    "Reduce crime rates by 30%", "Launch a new crime prevention program in Chicago",                                                        "http://example.com/promise345", "Chicago",         "The crime prevention program is being implemented in high-crime areas", "The program is expected to reduce crime rates by 30% within the next 2 years");
     $promise5 = create_promise("5. 8. 2021.",    "Transportation",   "Susan Davis",  "Boston",       "NA",                           "Improve public transportation by 25%", "Launch a new project to upgrade public transportation infrastructure in Boston",               "http://example.com/promise678", "Boston",          "The project is currently being planned and will be launched soon", "The improved infrastructure is expected to increase ridership and reduce traffic congestion in Boston");
     $promise6 = create_promise("11. 11. 2021.",  "Energy",           "Mark Johnson", "Austin",       "NOTDONE_DELAYED",              "Implement renewable energy sources for city buildings", "Develop a plan to power all city buildings with renewable energy sources",    "http://example.com/promise123", "Austin",          "The plan is currently being developed by a team of experts", "The use of renewable energy sources will help reduce the city's carbon footprint");
@@ -104,12 +104,11 @@ function get_all_mayors_overview() {
             $mayor_name = $promise->mayor_name;
             $mayor_city = $promise->city;
 
-            $dict_key = $mayor_name . '_' . $mayor_city; // TODO: Debug why it is not working
-            $dict_key = $mayor_name;
+            $dict_key = $mayor_name . '_' . $mayor_city;
 
             // If dictionary entry exists then return it, create it if not
             if (array_key_exists($dict_key, $mayors_dict)) {
-                $mayor_obj = $mayors_dict[$mayor_name];
+                $mayor_obj = $mayors_dict[$dict_key];
             } else {
                 $mayor_obj = createMayorOverview($mayor_name, $mayor_city, 0, 0);
 
