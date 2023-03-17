@@ -40,8 +40,46 @@ function create_promise($date, $category, $mayor_name, $city, $status, $name, $d
     return $promise;
 }
 
+function get_data_from_tsv_file($filename)
+{
+    $list_of_promises = array();
 
-function get_data() {
+    //$filename = 'test_data/test_data.tsv';
+    $file = fopen($filename, 'r');
+
+    $count = 0;
+
+    if ($file) {
+        while (($row = fgetcsv($file, 0, "\t")) !== false) {
+            // $row is an array of the values in the current row
+            // do something with the values, such as print them
+            //print_r($row);
+
+            $count++;
+
+            // Skip first row
+            if ($count == 1) continue;
+
+            if ($count == 100) {
+                continue;
+            }
+
+            if (empty($row[2]) /*Mayor*/ || empty($row[3]) /*City*/)
+            {
+                continue;
+            }
+
+            $promise  = create_promise($row[0] /*Datum*/, $row[1] /*Category*/, $row[2] /*Mayor*/, $row[3] /*City*/, $row[9] /*status*/, $row[4] /*name*/, $row[5], $row[6], $row[7], $row[8], $row[9], $row[10]);
+
+            array_push($list_of_promises, $promise);
+        }
+        fclose($file);
+    }
+
+    return $list_of_promises;
+}
+
+function get_hardcoded_data() {
     $promise1  = create_promise("4. 8. 2021.",    "Environment",      "Jane Smith",   "Seattle",      "DONE_DELAYED",                 "Reduce carbon emissions by 50%", "Launch a city-wide initiative to reduce carbon emissions",                                           "http://example.com/promise456", "Seattle",         "The initiative is currently being planned and will be launched soon", "The city expects to achieve its goal within the next 5 years");
     $promise2  = create_promise("5. 8. 2021.",    "Healthcare",       "Jane Smith",   "Los Angeles",  "DONE_ONTIME",                  "Build a new hospital", "Launch a project to build a new hospital in Los Angeles",                                                      "http://example.com/promise789", "Los Angeles",     "The hospital construction is underway", "The hospital is expected to be completed within the next 3 years");
     $promise3  = create_promise("2. 7. 2022.",    "Education",        "Jane Smith",   "Seattle",      "INPROGRESS_PARTIAL_DELAYED",   "Increase funding for public schools by 20%", "Propose a new budget allocation for public schools in San Francisco",                    "http://example.com/promise012", "San Francisco",   "The budget proposal is being reviewed by the city council", "The increased funding is expected to improve the quality of education in San Francisco schools");
@@ -67,6 +105,15 @@ function get_data() {
     array_push($list_of_promises, $promise10);
 
     return $list_of_promises;
+}
+
+
+function get_data() {
+    //return get_hardcoded_data();
+
+    //return get_data_from_tsv_file("test_data/test_data.tsv");
+
+    return get_data_from_tsv_file("test_data/data_23_03_08.tsv");
 }
 
 

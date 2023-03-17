@@ -29,6 +29,22 @@ require_once "data_provider.php";
 $listOfMayors = get_all_mayors_overview();
 
 echo "<pre>";
+
+if (0)
+{
+    $filename = 'test_data/test_data.tsv';
+    $file = fopen($filename, 'r');
+
+    if ($file) {
+        while (($row = fgetcsv($file, 0, "\t")) !== false) {
+            // $row is an array of the values in the current row
+            // do something with the values, such as print them
+            print_r($row);
+        }
+        fclose($file);
+    }
+}
+
 //print_r($listOfMayors);
 echo " </pre>";
 ?>
