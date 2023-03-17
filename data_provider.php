@@ -3,6 +3,7 @@
 // TODO: Merge data returned in these functions into a single source of hardcoded data
 // TODO: Replace hardcoded data with .tsv source
 
+// TODO: Code is a mess. Convert to this coding conventions: https://developer.wordpress.org/coding-standards/wordpress-coding-standards/php/
 
 
 ////////////////// Hardcoded data source //////////////////////////////////////////////////
@@ -42,15 +43,16 @@ function create_promise($date, $category, $mayor_name, $city, $status, $name, $d
 
 
 function get_test_data() {
-    $promise1 = create_promise("4. 8. 2021.",    "Environment",      "Jane Smith",   "Seattle",      "DONE_DELAYED",                 "Reduce carbon emissions by 50%", "Launch a city-wide initiative to reduce carbon emissions",                                           "http://example.com/promise456", "Seattle",         "The initiative is currently being planned and will be launched soon", "The city expects to achieve its goal within the next 5 years");
-    $promise2 = create_promise("5. 8. 2021.",    "Healthcare",       "Jane Smith",   "Los Angeles",  "DONE_ONTIME",                  "Build a new hospital", "Launch a project to build a new hospital in Los Angeles",                                                      "http://example.com/promise789", "Los Angeles",     "The hospital construction is underway", "The hospital is expected to be completed within the next 3 years");
-    $promise3 = create_promise("2. 7. 2022.",    "Education",        "Jane Smith",   "Seattle",      "INPROGRESS_PARTIAL_DELAYED",   "Increase funding for public schools by 20%", "Propose a new budget allocation for public schools in San Francisco",                    "http://example.com/promise012", "San Francisco",   "The budget proposal is being reviewed by the city council", "The increased funding is expected to improve the quality of education in San Francisco schools");
-    $promise4 = create_promise("27. 1. 2022.",   "Crime",            "Jane Smith",   "Seattle",      "INPROGRESS_PARTIAL_ONTIME",    "Reduce crime rates by 30%", "Launch a new crime prevention program in Chicago",                                                        "http://example.com/promise345", "Chicago",         "The crime prevention program is being implemented in high-crime areas", "The program is expected to reduce crime rates by 30% within the next 2 years");
-    $promise5 = create_promise("5. 8. 2021.",    "Transportation",   "Susan Davis",  "Boston",       "NA",                           "Improve public transportation by 25%", "Launch a new project to upgrade public transportation infrastructure in Boston",               "http://example.com/promise678", "Boston",          "The project is currently being planned and will be launched soon", "The improved infrastructure is expected to increase ridership and reduce traffic congestion in Boston");
-    $promise6 = create_promise("11. 11. 2021.",  "Energy",           "Mark Johnson", "Austin",       "NOTDONE_DELAYED",              "Implement renewable energy sources for city buildings", "Develop a plan to power all city buildings with renewable energy sources",    "http://example.com/promise123", "Austin",          "The plan is currently being developed by a team of experts", "The use of renewable energy sources will help reduce the city's carbon footprint");
-    $promise7 = create_promise("8. 8. 2022.",    "Public safety",    "Emily Lee",    "New York",     "NOTDONE_ONTIME",               "Increase police presence in high-crime areas", "Launch a new initiative to increase police patrols in high-crime areas of the city",   "http://example.com/promise456", "New York City",   "The initiative is currently being implemented and has shown promising results", "The increased police presence is expected to deter crime and improve safety in those areas");
-    $promise8 = create_promise("8. 8. 2022.",    "Infrastructure",   "John Brown",   "Houston",      "DONE_DELAYED",                 "Repair and upgrade city roads and bridges", "Allocate funds for repairing and upgrading city roads and bridges",                       "http://example.com/promise789", "Houston",         "The budget proposal for the road and bridge repairs is being reviewed by the city council", "The repaired and upgraded infrastructure will improve safety and convenience for drivers");
-    $promise9 = create_promise("8. 8. 2022.",    "Environment",      "Sophia Kim",   "San Diego",    "DONE_ONTIME",                  "Increase the number of public parks and green spaces", "Develop a plan to create more public parks and green spaces in the city",      "http://example.com/promise012", "San Diego",       "The plan is currently being developed by a team of experts", "The increase in green spaces will improve the quality of life for residents and reduce the city's carbon footprint");
+    $promise1  = create_promise("4. 8. 2021.",    "Environment",      "Jane Smith",   "Seattle",      "DONE_DELAYED",                 "Reduce carbon emissions by 50%", "Launch a city-wide initiative to reduce carbon emissions",                                           "http://example.com/promise456", "Seattle",         "The initiative is currently being planned and will be launched soon", "The city expects to achieve its goal within the next 5 years");
+    $promise2  = create_promise("5. 8. 2021.",    "Healthcare",       "Jane Smith",   "Los Angeles",  "DONE_ONTIME",                  "Build a new hospital", "Launch a project to build a new hospital in Los Angeles",                                                      "http://example.com/promise789", "Los Angeles",     "The hospital construction is underway", "The hospital is expected to be completed within the next 3 years");
+    $promise3  = create_promise("2. 7. 2022.",    "Education",        "Jane Smith",   "Seattle",      "INPROGRESS_PARTIAL_DELAYED",   "Increase funding for public schools by 20%", "Propose a new budget allocation for public schools in San Francisco",                    "http://example.com/promise012", "San Francisco",   "The budget proposal is being reviewed by the city council", "The increased funding is expected to improve the quality of education in San Francisco schools");
+    $promise4  = create_promise("27. 1. 2022.",   "Crime",            "Jane Smith",   "Seattle",      "INPROGRESS_PARTIAL_ONTIME",    "Reduce crime rates by 30%", "Launch a new crime prevention program in Chicago",                                                        "http://example.com/promise345", "Chicago",         "The crime prevention program is being implemented in high-crime areas", "The program is expected to reduce crime rates by 30% within the next 2 years");
+    $promise5  = create_promise("5. 8. 2021.",    "Transportation",   "Susan Davis",  "Boston",       "NA",                           "Improve public transportation by 25%", "Launch a new project to upgrade public transportation infrastructure in Boston",               "http://example.com/promise678", "Boston",          "The project is currently being planned and will be launched soon", "The improved infrastructure is expected to increase ridership and reduce traffic congestion in Boston");
+    $promise6  = create_promise("11. 11. 2021.",  "Energy",           "Mark Johnson", "Austin",       "NOTDONE_DELAYED",              "Implement renewable energy sources for city buildings", "Develop a plan to power all city buildings with renewable energy sources",    "http://example.com/promise123", "Austin",          "The plan is currently being developed by a team of experts", "The use of renewable energy sources will help reduce the city's carbon footprint");
+    $promise7  = create_promise("8. 8. 2022.",    "Public safety",    "Emily Lee",    "New York",     "NOTDONE_ONTIME",               "Increase police presence in high-crime areas", "Launch a new initiative to increase police patrols in high-crime areas of the city",   "http://example.com/promise456", "New York City",   "The initiative is currently being implemented and has shown promising results", "The increased police presence is expected to deter crime and improve safety in those areas");
+    $promise8  = create_promise("8. 8. 2022.",    "Infrastructure",   "John Brown",   "Houston",      "DONE_DELAYED",                 "Repair and upgrade city roads and bridges", "Allocate funds for repairing and upgrading city roads and bridges",                       "http://example.com/promise789", "Houston",         "The budget proposal for the road and bridge repairs is being reviewed by the city council", "The repaired and upgraded infrastructure will improve safety and convenience for drivers");
+    $promise9  = create_promise("8. 8. 2022.",    "Environment",      "Sophia Kim",   "San Diego",    "DONE_ONTIME",                  "Increase the number of public parks and green spaces", "Develop a plan to create more public parks and green spaces in the city",      "http://example.com/promise012", "San Diego",       "The plan is currently being developed by a team of experts", "The increase in green spaces will improve the quality of life for residents and reduce the city's carbon footprint");
+    $promise10 = create_promise("8. 8. 2022.",    "Environment",      "Jane Smith",   "Los Angeles",  "DONE_ONTIME",                  "Increase the number of public parks and green spaces", "Develop a plan to create more public parks and green spaces in the city",      "http://example.com/promise012", "San Diego",       "The plan is currently being developed by a team of experts", "The increase in green spaces will improve the quality of life for residents and reduce the city's carbon footprint");
 
     $list_of_promises = array();
 
@@ -63,6 +65,7 @@ function get_test_data() {
     array_push($list_of_promises, $promise7);
     array_push($list_of_promises, $promise8);
     array_push($list_of_promises, $promise9);
+    array_push($list_of_promises, $promise10);
 
     return $list_of_promises;
 }
@@ -117,6 +120,7 @@ function get_all_mayors_overview() {
 
             $mayor_obj->num_of_promises += 1;
 
+            // TODO: Also count DONE_DELAYED ??
             if ($promise->status == "DONE_ONTIME") {
                 $mayor_obj->num_of_fulfilled_promises += 1;
             }
@@ -132,10 +136,12 @@ function get_all_mayors_comparison() {
     class MayorPromisesOverview {
         public $mayor_name;
         public $city_name;
+        public $promises;
+    }
 
-        # Za pocetak samo hardcodirati sve kategorije, kasnije refaktorirati da sve dinamicki generira
-        public $num_of_promises;
-        public $num_of_fulfilled_promises;
+    class Comparison_Data {
+        public $list_of_categories;
+        public $list_of_mayors;
     }
 
     function createMayorOverview_for_promises($name, $city, $promises) {
@@ -147,30 +153,60 @@ function get_all_mayors_comparison() {
         return $obj;
     }
 
-    $promises = array(
-        "Ekonomija i gospodarstvo"  => [1, 2],
-        "Okoliš i zaštita prirode"  => [3, 4],
-        "Urbanizam i stanovanje"    => [5, 6],
-        "Promet"              => [7, 8],
-        "Obrazovanje"         => [9, 9],
-        "Kultura"             => [1, 2],
-        "Zdravstvo"           => [3, 4],
-        "Socijalna politika"  => [5, 6],
-        "Sigurnost"           => [7, 8],
-        "Mladi"               => [9, 9],
-        "Civilno društvo"     => [1, 2],
-        "Sport"               => [3, 4],
-        "Mjesna samouprava"   => [5, 6],
-        "Gradska uprava i upravljanje"  => [7, 8],
-    );
+    $all_promises = get_test_data();
 
-    $listOfMayors = array();
+    // Data that will be returned by the function
+    $comparison_data = new Comparison_Data();
 
-    array_push($listOfMayors, createMayorOverview_for_promises("Gradonacelnik_1", "Grad_1", $promises));
-    array_push($listOfMayors, createMayorOverview_for_promises("Gradonacelnik_2", "Grad_2", $promises));
-    array_push($listOfMayors, createMayorOverview_for_promises("Gradonacelnik_3", "Grad_3", $promises));
+    $list_of_categories = array();
+    $mayors_dict = array();
 
-    return $listOfMayors;
+    // Find all distict mayors and count their fullfilled promises for each category
+    foreach($all_promises as $promise) {
+
+        // Remeber all dinstict categories
+        if ( ! in_array($promise->category, $list_of_categories)) {
+            array_push($list_of_categories, $promise->category);
+        }
+
+        // TODO: A lot of code is identical between get_all_mayors_overview() and this function. Maybe share it
+        $mayor_obj = null;
+
+        $mayor_name = $promise->mayor_name;
+        $mayor_city = $promise->city;
+
+        $dict_key = $mayor_name . '_' . $mayor_city;
+
+        // If dictionary entry exists then return it, create it if not
+        if (array_key_exists($dict_key, $mayors_dict)) {
+            $mayor_obj = $mayors_dict[$dict_key];
+        } else {
+            $mayor_obj = createMayorOverview_for_promises($mayor_name, $mayor_city, array());
+
+            $mayors_dict[$dict_key] = $mayor_obj;
+        }
+
+        $mayor_promises = &$mayor_obj->promises;
+
+        if ( ! array_key_exists($promise->category, $mayor_promises)) {
+            // TODO: Turn this into structured data
+            $mayor_promises[$promise->category] = array();
+            $mayor_promises[$promise->category][0] = 0;
+            $mayor_promises[$promise->category][1] = 0;
+        }
+
+        $mayor_promises[$promise->category][1] += 1;
+
+        // TODO: Also count DONE_DELAYED ??
+        if ($promise->status == "DONE_ONTIME") {
+            $mayor_promises[$promise->category][0] += 1;
+        }
+    }
+
+    $comparison_data->list_of_mayors = $mayors_dict;
+    $comparison_data->list_of_categories = $list_of_categories;
+
+    return $comparison_data;
 }
 
 
