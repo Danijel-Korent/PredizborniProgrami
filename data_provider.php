@@ -1,6 +1,5 @@
 <?php
 
-// TODO: Merge data returned in these functions into a single source of hardcoded data
 // TODO: Replace hardcoded data with .tsv source
 
 // TODO: Code is a mess. Convert to this coding conventions: https://developer.wordpress.org/coding-standards/wordpress-coding-standards/php/
@@ -42,7 +41,7 @@ function create_promise($date, $category, $mayor_name, $city, $status, $name, $d
 }
 
 
-function get_test_data() {
+function get_data() {
     $promise1  = create_promise("4. 8. 2021.",    "Environment",      "Jane Smith",   "Seattle",      "DONE_DELAYED",                 "Reduce carbon emissions by 50%", "Launch a city-wide initiative to reduce carbon emissions",                                           "http://example.com/promise456", "Seattle",         "The initiative is currently being planned and will be launched soon", "The city expects to achieve its goal within the next 5 years");
     $promise2  = create_promise("5. 8. 2021.",    "Healthcare",       "Jane Smith",   "Los Angeles",  "DONE_ONTIME",                  "Build a new hospital", "Launch a project to build a new hospital in Los Angeles",                                                      "http://example.com/promise789", "Los Angeles",     "The hospital construction is underway", "The hospital is expected to be completed within the next 3 years");
     $promise3  = create_promise("2. 7. 2022.",    "Education",        "Jane Smith",   "Seattle",      "INPROGRESS_PARTIAL_DELAYED",   "Increase funding for public schools by 20%", "Propose a new budget allocation for public schools in San Francisco",                    "http://example.com/promise012", "San Francisco",   "The budget proposal is being reviewed by the city council", "The increased funding is expected to improve the quality of education in San Francisco schools");
@@ -93,7 +92,7 @@ function get_all_mayors_overview() {
     }
 
 
-    $all_promises = get_test_data();
+    $all_promises = get_data();
 
     // Object that will be filled with "MayorOverview" instances and returned
     $mayors_dict = array();
@@ -153,7 +152,7 @@ function get_all_mayors_comparison() {
         return $obj;
     }
 
-    $all_promises = get_test_data();
+    $all_promises = get_data();
 
     // Data that will be returned by the function
     $comparison_data = new Comparison_Data();
@@ -222,35 +221,28 @@ function get_single_mayor_data($mayor_name, $mayor_city) {
     }
 
     // Get hardcoded list of promises
-    $all_promises = get_test_data();
+    $all_promises = get_data();
 
     // The list of promises to be returned
     // TODO: Rename this to better name
     $listOfPromises = array();
-    $listOfPromises["test_kategorija"] = array();
 
     // Find all distict mayors and count their fullfilled promises
-    {
-        foreach($all_promises as $promise) {
 
-            $iter_mayor_name = $promise->mayor_name;
-            $iter_mayor_city = $promise->city;
+    foreach($all_promises as $promise) {
 
-            if (($iter_mayor_name == $mayor_name) && ($iter_mayor_city == $mayor_city)) {
+        $iter_mayor_name = $promise->mayor_name;
+        $iter_mayor_city = $promise->city;
 
-                if ( ! array_key_exists($promise->category, $listOfPromises)) {
-                    $listOfPromises[$promise->category] = array();
-                }
+        if (($iter_mayor_name == $mayor_name) && ($iter_mayor_city == $mayor_city)) {
 
-                array_push($listOfPromises[$promise->category], $promise);
+            if ( ! array_key_exists($promise->category, $listOfPromises)) {
+                $listOfPromises[$promise->category] = array();
             }
+
+            array_push($listOfPromises[$promise->category], $promise);
         }
     }
-
-    # TODO: Convert category string values into enum values
-    # array_push($listOfPromises, create_promise("Promise_1", "Gradska uprava i upravljanje", "Description_1", "URL_1", "location_1", "result_1"));
-    # array_push($listOfPromises, create_promise("Promise_2", "Ekonomija i gospodarstvo", "Description_1", "URL_2", "location_1", "result_1"));
-    # array_push($listOfPromises, create_promise("Promise_3", "Urbanizam i stanovanje", "Description_1", "URL_3", "location_1", "result_1"));
 
     return $listOfPromises;
 }
