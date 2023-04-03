@@ -166,8 +166,7 @@ function get_all_mayors_overview() {
 
             $mayor_obj->num_of_promises += 1;
 
-            // TODO: Also count DONE_DELAYED ??
-            if ($promise->status == "DONE_ONTIME") {
+            if ($promise->status == "DONE_ONTIME" || $promise->status == "DONE_DELAYED") {
                 $mayor_obj->num_of_fulfilled_promises += 1;
             }
         }
@@ -243,8 +242,7 @@ function get_all_mayors_comparison() {
 
         $mayor_promises[$promise->category][1] += 1;
 
-        // TODO: Also count DONE_DELAYED ??
-        if ($promise->status == "DONE_ONTIME") {
+        if ($promise->status == "DONE_ONTIME" || $promise->status == "DONE_DELAYED") {
             $mayor_promises[$promise->category][0] += 1;
         }
     }
