@@ -5,10 +5,6 @@
 // TODO: Code is a mess. Convert to this coding conventions: https://developer.wordpress.org/coding-standards/wordpress-coding-standards/php/
 
 
-////////////////// Hardcoded data source //////////////////////////////////////////////////
-
-
-
 class Promise {
     public $date;
     public $category;
@@ -50,7 +46,21 @@ function get_data_from_tsv_file($filename)
     $count = 0;
 
     if ($file) {
-        while (($row = fgetcsv($file, 0, "\t")) !== false) {
+        $list_of_promises = transform_tsv_data_into_promises($file);
+
+        fclose($file);
+    }
+
+    return $list_of_promises;
+}
+
+// Reads TSV data and outputs a list of "promise" structs
+function transform_tsv_data_into_promises($data)
+{
+    $list_of_promises = array();
+
+    if ($data) {
+        while (($row = fgetcsv($data, 0, "\t")) !== false) {
             // $row is an array of the values in the current row
             // do something with the values, such as print them
             //print_r($row);
@@ -73,7 +83,6 @@ function get_data_from_tsv_file($filename)
 
             array_push($list_of_promises, $promise);
         }
-        fclose($file);
     }
 
     return $list_of_promises;
