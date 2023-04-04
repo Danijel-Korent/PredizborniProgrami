@@ -36,6 +36,24 @@ function create_promise($date, $category, $mayor_name, $city, $status, $name, $d
     return $promise;
 }
 
+function get_data_from_google_sheet()
+{
+    $url = 'https://docs.google.com/spreadsheets/d/1wo_D2bJji_Sbq_tmuvOIlzbSst7Mbl5_TjoB769xVLI/export?format=tsv';
+
+    $data_str = file_get_contents($url);
+    if ($data_str === false) {
+        return Null;
+    } else {
+
+        // Transform string we got from file_get_contents() into a stream type
+        $stream = fopen('php://memory', 'r+');
+        fwrite($stream, $data_str);
+        rewind($stream);
+
+        return transform_tsv_data_into_promises($stream);
+    }
+}
+
 function get_data_from_tsv_file($filename)
 {
     $list_of_promises = array();
@@ -54,13 +72,13 @@ function get_data_from_tsv_file($filename)
     return $list_of_promises;
 }
 
-// Reads TSV data and outputs a list of "promise" structs
-function transform_tsv_data_into_promises($data)
+// Receives file/stream containing TSV data and outputs a list of "promise" structs
+function transform_tsv_data_into_promises($data_stream)
 {
     $list_of_promises = array();
 
-    if ($data) {
-        while (($row = fgetcsv($data, 0, "\t")) !== false) {
+    if ($data_stream) {
+        while (($row = fgetcsv($data_stream, 0, "\t")) !== false) {
             // $row is an array of the values in the current row
             // do something with the values, such as print them
             //print_r($row);
@@ -122,7 +140,9 @@ function get_data() {
 
     //return get_data_from_tsv_file("test_data/test_data.tsv");
 
-    return get_data_from_tsv_file("test_data/data_23_03_08.tsv");
+    //return get_data_from_tsv_file("test_data/data_23_03_08.tsv");
+
+    return get_data_from_google_sheet();
 }
 
 
